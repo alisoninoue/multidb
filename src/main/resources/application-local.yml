@@ -1,0 +1,16 @@
+spring:
+  mysql-datasource:
+    initialization-mode: always
+
+  sybase-datasource:
+    initialization-mode: always
+
+  jpa:
+    show-sql: true
+
+    hibernate:
+      ddl-auto: create-drop
+
+logging:
+  level:
+    com.zaxxer.hikari.HikariConfig: DEBUG

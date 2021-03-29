@@ -1,0 +1,77 @@
+spring:
+  kafka:
+    listener:
+      ack-mode: manual
+    bootstrap-servers: localhost:9092
+    properties:
+      auto.register.schemas: true
+      schema.registry.url: http://localhost:8081
+      security:
+        protocol: PLAINTEXT
+    consumer:
+      group-id: group_id
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+
+  mysql-datasource:
+    url: jdbc:mysql://localhost:3306/testedb
+    username: root
+    password: MySql2021!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: mysql
+    initialization-mode: never
+    hikari:
+      pool-name: MYSQL-HIKARI-POOL
+      maximum-pool-size: 15
+      connection-test-query: SELECT 1
+    hibernate:
+      hbm2ddl:
+        auto: CREATE
+      dialect: org.hibernate.dialect.MySQL8Dialect
+
+  sybase-datasource:
+    url: jdbc:sybase:Tds:localhost:5000/guest
+    username: guest
+    password: guest1234
+    driver-class-name: com.sybase.jdbc4.jdbc.SybDriver
+    platform: sybase
+    initialization-mode: never
+    hikari:
+      pool-name: SYBASE-HIKARI-POOL
+      minimum-idle: 2
+      maximum-pool-size: 10
+      connection-test-query: SELECT 1
+    hibernate:
+      hbm2ddl:
+        auto: CREATE
+      dialect: org.hibernate.dialect.Sybase11Dialect
+
+  jpa:
+    properties:
+      hibernate:
+        order_inserts: true
+        jdbc:
+          batch_size: 5
+    show-sql: true
+
+    hibernate:
+      ddl-auto: create-drop
+
+logging:
+  level:
+    com.zaxxer.hikari.HikariConfig: DEBUG
+
+topic:
+  name:
+    producer:
+      comando-consulta: comando-consulta
+      consulta-realizada: consulta-realizada
+    consumer: consulta-realizada
+  client-id:
+    consulta-realizada: client-id-consulta
+  group-id:
+    consulta-realizada: group-consulta-realizada

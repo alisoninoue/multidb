@@ -1,0 +1,11 @@
+{
+  "namespace": "com.multidb.avro",
+  "type": "record",
+  "name": "ConsultaRealizada",
+  "fields": [
+    {"name": "numeroContrato", "type": "string"},
+    {"name": "codigoConvenio",  "type": "string"},
+    {"name": "numeroMatricula",  "type": "string"},
+    {"name": "indicadorPagamento", "type": "boolean"}
+  ]
+}

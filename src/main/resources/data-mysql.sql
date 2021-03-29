@@ -1,0 +1,1 @@
+insert into Person (`name`) values ('Person 1');

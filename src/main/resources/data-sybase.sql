@@ -1,0 +1,3 @@
+insert into PropostaEntity (numeroContrato, codigoConvenio, numeroMatricula, dataInclusao) values ('00001','1581','10001', '2021-03-28 10:56:00.000');
+insert into PropostaEntity (numeroContrato, codigoConvenio, numeroMatricula, dataInclusao) values ('00002','1581','10002', '2021-03-28 10:56:10.000');
+insert into PropostaEntity (numeroContrato, codigoConvenio, numeroMatricula, dataInclusao) values ('00003','1581','10003', '2021-03-28 10:56:20.000');
