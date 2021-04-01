@@ -48,6 +48,7 @@ public class MysqlDataSource {
         Map<String, String> mysqlJpaProperties = new HashMap<>();
         mysqlJpaProperties.put("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
         mysqlJpaProperties.put("hibernate.hbm2ddl.auto", "create");
+        mysqlJpaProperties.put("hibernate.id.disable_delayed_identity_inserts", "true");
 
         return mysqlEntityManagerFactoryBuilder
                 .dataSource(mysqlDataSource)

@@ -34,7 +34,7 @@ public class TestScheduler {
     void execute() {
         log.info(LocalDateTime.now() + "Test Scheduler");
 
-        ControleProcessamentoEntity controleProcessamentoEntity = controleProcessamento.getDataInicioProcessamento("rotina1");
+        ControleProcessamentoEntity controleProcessamentoEntity = controleProcessamento.getDataInicioProcessamento("1");
 
         LocalDateTime dataInicio = controleProcessamentoEntity.getDataUltimaExecucao();
         LocalDateTime dataFim = LocalDateTime.now();

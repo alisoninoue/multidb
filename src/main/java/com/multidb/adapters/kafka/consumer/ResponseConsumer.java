@@ -1,6 +1,6 @@
 package com.multidb.adapters.kafka.consumer;
 
-import com.multidb.application.services.ConsumerConsultaService;
+import com.multidb.application.services.ControleConsistenciaService;
 import com.multidb.avro.ConsultaRealizada;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +17,7 @@ import java.nio.charset.StandardCharsets;
 @RequiredArgsConstructor
 public class ResponseConsumer {
 
-    private final ConsumerConsultaService service;
+    private final ControleConsistenciaService service;
 
     @KafkaListener(
             topics = "${topic.name.consumer}",

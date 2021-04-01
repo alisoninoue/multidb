@@ -4,10 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+
+import static javax.persistence.CascadeType.ALL;
 
 @Data
 @NoArgsConstructor
@@ -17,7 +17,12 @@ import java.time.LocalDateTime;
 public class ControleProcessamentoEntity {
 
     @Id
+    @Column(name = "cod_rotina")
     private String codigoRotina;
 
     private LocalDateTime dataUltimaExecucao;
+
+    @OneToOne(cascade = ALL)
+    @PrimaryKeyJoinColumn
+    private TipoRotinaEntity tipoRotinaEntity;
 }
